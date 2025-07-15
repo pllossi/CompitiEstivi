@@ -14,49 +14,47 @@ namespace GattileLib
 
         public string Nome
         {
-            get => default;
-            set
+            get
             {
+                return _nome;
+            }
+            private set
+            {
+                if (value=="" || value==" ") { throw new ArgumentException(); }
+                _nome = value;
             }
         }
 
         public string Razza
         {
-            get => default;
-            set
+            get
             {
+                return _razza;
+            }
+            private set
+            {
+                if(value=="" || value==" ") { throw new ArgumentException(); }
+                _razza = value;
             }
         }
 
         public bool Maschio
         {
-            get => default;
-            set
-            {
-            }
+            get ;
+            private set;
         }
 
-        private string _nome
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        private string _nome;
 
-        private string _razza
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        private string _razza;
 
         public string? Descrizione
         {
             get => default;
             set
             {
+                if(value=="" || value == " ") { throw new ArgumentException(); }
+                field = value;
             }
         }
 
