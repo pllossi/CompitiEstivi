@@ -7,25 +7,21 @@ namespace GattileLib
 {
     public class Adozione
     {
-        public Adozione()
+        public Adozione(Adottante adottante, Gatto gatto, DateTime dataAdozione)
         {
-            throw new System.NotImplementedException();
+            Adottante = adottante ?? throw new ArgumentNullException(nameof(adottante));
+            Gatto = gatto ?? throw new ArgumentNullException(nameof(gatto));
+            DataAdozione = dataAdozione;
         }
 
-        public Gatto Gatto
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public Gatto Gatto;
 
-        public Adottante Adottante
+        public Adottante Adottante;
+
+        public DateTime DataAdozione
         {
-            get => default;
-            set
-            {
-            }
+            get;
+            private set;
         }
     }
 }
