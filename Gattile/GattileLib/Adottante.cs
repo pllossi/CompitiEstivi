@@ -7,41 +7,37 @@ namespace GattileLib
 {
     public class Adottante
     {
-        public Adottante()
+        public Adottante(Adottante adottante)
         {
-            throw new System.NotImplementedException();
+            if (adottante == null) throw new ArgumentNullException(nameof(adottante));
+            Nome = adottante.Nome;
+            Cognome = adottante.Cognome;
+            Indirizzo = adottante.Indirizzo;
+            Telefono = adottante.Telefono;
         }
 
         public string Nome
         {
-            get => default;
-            set
-            {
-            }
+            get;
+            private set;
         }
 
         public string Cognome
         {
-            get => default;
-            set
-            {
-            }
+            get;
+            private set;
         }
 
         public string Indirizzo
         {
-            get => default;
-            set
-            {
-            }
+            get;
+            private set;
         }
 
         public int Telefono
         {
-            get => default;
-            set
-            {
-            }
+            get;
+            private set;
         }
     }
 }
