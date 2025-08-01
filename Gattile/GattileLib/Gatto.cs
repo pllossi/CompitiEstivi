@@ -48,13 +48,15 @@ namespace GattileLib
 
         private string _razza;
 
+        private string? _descrizione = "";
+
         public string? Descrizione
         {
-            get => default;
+            get => _descrizione;
             set
             {
                 if(value=="" || value == " ") { throw new ArgumentException(); }
-                field = value;
+                _descrizione = value;
             }
         }
 

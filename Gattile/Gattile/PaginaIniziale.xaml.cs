@@ -14,11 +14,12 @@ namespace Gattile
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PaginaIniziale : Window
     {
-        public MainWindow()
+        public PaginaIniziale()
         {
             InitializeComponent();
         }
+
     }
 }
