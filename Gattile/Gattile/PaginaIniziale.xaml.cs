@@ -1,25 +1,48 @@
-﻿using System.Text;
+﻿using Gattile;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Gattile
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class PaginaIniziale : Window
     {
+        GestoreGattile gestore = new GestoreGattile();
+
         public PaginaIniziale()
         {
             InitializeComponent();
+            lblNumGatti.Content = gestore.gattiPresenti.Count.ToString();
         }
 
+        private void btnVisualizzaGatti_Click(object sender, RoutedEventArgs e)
+        {
+            var finestra = new FinestraGatti(gestore);
+            finestra.Show();
+        }
+
+        private void btnNuovoGatto_Click(object sender, RoutedEventArgs e)
+        {
+            var finestra = new FinestraNuovoGatto(gestore);
+            finestra.Show();
+        }
+
+        private void btnVisualizzaAdozioni_Click(object sender, RoutedEventArgs e)
+        {
+            var finestra = new FinestraAdozioni(gestore);
+            finestra.Show();
+        }
+
+        private void btnNuovaAdozione_Click(object sender, RoutedEventArgs e)
+        {
+            var finestra = new FinestraNuovaAdozione(gestore);
+            finestra.Show();
+        }
+
+        private void btnAdozioneFallita_Click(object sender, RoutedEventArgs e)
+        {
+            var finestra = new FinestraAdozioneFallita(gestore);
+            finestra.Show();
+        }
     }
+
 }

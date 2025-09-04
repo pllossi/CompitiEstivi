@@ -10,9 +10,10 @@
         <Label x:Name="lblPrincInizio" Content="Gattile" HorizontalAlignment="Center" Margin="0,43,0,0" VerticalAlignment="Top" Width="94" FontSize="29"/>
         <Label Content="Gatti attualmente presenti nel gattile:" HorizontalAlignment="Left" Height="36" Margin="204,143,0,0" VerticalAlignment="Top" Width="243" FontSize="20"/>
         <Label x:Name="lblNumGatti" Content="" HorizontalAlignment="Left" Height="36" Margin="452,143,0,0" VerticalAlignment="Top" Width="78" FontSize="20"/>
-        <Button Content="Adotta Gatto" HorizontalAlignment="Left" Height="51" Margin="128,289,0,0" VerticalAlignment="Top" Width="143"/>
-        <Button Content="Registra Gatto" HorizontalAlignment="Left" Height="51" Margin="538,289,0,0" VerticalAlignment="Top" Width="143"/>
-        <Button Content="Mostra Lista Gatti" HorizontalAlignment="Center" Height="51" Margin="0,289,0,0" VerticalAlignment="Top" Width="144" Click="Button_Click"/>
+        <Button x:Name="btnNuovaAdozione" Content="Adotta Gatto" HorizontalAlignment="Left" Height="51" Margin="250,295,0,0" VerticalAlignment="Top" Width="143" Click="btnNuovaAdozione_Click"/>
+        <Button x:Name="btnNuovoGatto" Content="Registra Gatto" HorizontalAlignment="Left" Height="51" Margin="615,295,0,0" VerticalAlignment="Top" Width="143" Click="btnNuovoGatto_Click"/>
+        <Button x:Name="btnVisualizzaAdozioni" Content="Mostra Lista Gatti" HorizontalAlignment="Left" Height="51" Margin="430,295,0,0" VerticalAlignment="Top" Width="144" Click="btnVisualizzaAdozioni_Click"/>
+        <Button x:Name="btnAdozioneFallita" Content="Restituisci Gatto" HorizontalAlignment="Left" Height="51" Margin="59,295,0,0" VerticalAlignment="Top" Width="143" Click="btnAdozioneFallita_Click"/>
 
     </Grid>
 </Window>

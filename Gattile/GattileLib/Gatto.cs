@@ -12,11 +12,12 @@ namespace GattileLib
             Nome = nome;
             Razza = razza;
             Maschio = maschio;
-            _descrizione = null;
-            DataUscita = null;
-            DataNascita = null;
-            CodiceId=CreateCodiceId();
+            Descrizione = descrizione;
+            DataUscita = dataUscita;
+            DataNascita = dataNascita;
+            CodiceId = CreateCodiceId();
         }
+
         public string Nome
         {
             get => _nome;
@@ -69,44 +70,34 @@ namespace GattileLib
             get => _descrizione;
             set
             {
-                if(value=="" || value == " ") { throw new ArgumentException(); }
+                if (value == "" || value == " ") { throw new ArgumentException(); }
                 _descrizione = value;
             }
         }
 
-        private string? _descrizione;
-
         public DateTime? DataUscita
         {
-            get => default;
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public DateTime? DataNascita
         {
-            get => default;
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public string CodiceId ="";
+        public string CodiceId = "";
 
         private string CreateCodiceId()
         {
-            int numero = new Random().Next(1000, 9999);
-            char PrimaLetteraMeseRegistrazione = DataArrivoGattile.ToString("MMM")[0];
-            string AnnoRegistrazione = DataArrivoGattile.Year.ToString();
-            string lettereRandom = "";
-            for (int i = 0; i < 3; i++)
-            {
-                lettereRandom += (char)new Random().Next(65, 91); // Genera una lettera maiuscola casuale
-            }
-            return $"{numero}{PrimaLetteraMeseRegistrazione}{AnnoRegistrazione}{lettereRandom}";
+            var rnd = new Random();
+            int numero = rnd.Next(10000, 99999); // 5 cifre  
+            char primaLetteraMese = DataArrivoGattile.ToString("MMM")[0];
+            string anno = DataArrivoGattile.Year.ToString();
+            string lettereRandom = new string(Enumerable.Range(0, 3)
+                .Select(_ => (char)rnd.Next(65, 91)).ToArray());
+            return $"{numero}{primaLetteraMese}{anno}{lettereRandom}";
         }
-        
-
     }
 }
