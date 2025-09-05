@@ -11,7 +11,7 @@ namespace Gattile
         {
             InitializeComponent();
             this.gestore = gestore;
-            cmbGatto.ItemsSource = gestore.gattiPresenti;
+            cmbGatto.ItemsSource = gestore.gattiAdottati;
         }
 
         private void btnRegistraFallita_Click(object sender, RoutedEventArgs e)

@@ -74,5 +74,13 @@ namespace Gattile
             }
             SalvaGatti();
         }
+        public List<Adottante> adottanti { get; private set; } = new();
+
+        public void InserisciAdottante(Adottante adottante)
+        {
+            adottanti.Add(adottante);
+            
+        }
     }
+
 }

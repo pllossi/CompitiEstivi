@@ -12,7 +12,7 @@ namespace Gattile
             InitializeComponent();
             this.gestore = gestore;
             cmbGatto.ItemsSource = gestore.gattiPresenti;
-            cmbAdottante.ItemsSource = gestore.adozioni;
+            cmbAdottante.ItemsSource = gestore.adottanti; 
         }
 
         private void btnRegistra_Click(object sender, RoutedEventArgs e)

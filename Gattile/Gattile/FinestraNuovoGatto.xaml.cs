@@ -19,7 +19,9 @@ namespace Gattile
                 txtNome.Text,
                 txtRazza.Text,
                 chkMaschio.IsChecked == true,
-                txtDescrizione.Text
+                txtDescrizione.Text,
+                null,
+                dpDataNascita.SelectedDate
             );
             gestore.InserisciGatto(nuovoGatto);
             Close();

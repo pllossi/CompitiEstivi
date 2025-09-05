@@ -1,27 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using GattileLib;
 
-namespace GattileLib
+public class Adozione
 {
-    public class Adozione
+    public Adozione(Adottante adottante, Gatto gatto, DateTime dataAdozione)
     {
-        public Adozione(Adottante adottante, Gatto gatto, DateTime dataAdozione)
-        {
-            Adottante = adottante ?? throw new ArgumentNullException(nameof(adottante));
-            Gatto = gatto ?? throw new ArgumentNullException(nameof(gatto));
-            DataAdozione = dataAdozione;
-        }
-
-        public Gatto Gatto;
-
-        public Adottante Adottante;
-
-        public DateTime DataAdozione
-        {
-            get;
-            private set;
-        }
+        Adottante = adottante;
+        Gatto = gatto;
+        DataAdozione = dataAdozione;
     }
+
+    public Gatto Gatto { get; set; }
+    public Adottante Adottante { get; set; }
+    public DateTime DataAdozione { get; set; }
 }
