@@ -1,24 +1,47 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace ArchivioIncantesimi
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private ArchivioIncantesimiGestore archivio = new();
+
         public MainWindow()
         {
             InitializeComponent();
+            archivio.Carica();
+            lblTotale.Content = $"Totale: {archivio.NumeroTotale()}";
+        }
+
+        private void AggiungiIncantesimo_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new FinestraAggiungiIncantesimo(archivio);
+            win.ShowDialog();
+            lblTotale.Content = $"Totale: {archivio.NumeroTotale()}";
+        }
+
+        private void VisualizzaIncantesimo_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new FinestraVisualizzaIncantesimo(archivio);
+            win.ShowDialog();
+        }
+
+        private void CercaAggiungiScuola_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new FinestraCercaAggiungiScuola(archivio);
+            win.ShowDialog();
+        }
+
+        private void VisualizzaPerScuola_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new FinestraVisualizzaPerScuola(archivio);
+            win.ShowDialog();
+        }
+
+        private void VisualizzaIncantesimi_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new FinestraVisualizzaIncantesimi(archivio);
+            win.ShowDialog();
         }
     }
 }

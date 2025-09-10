@@ -1,0 +1,24 @@
+﻿<Window x:Class="ArchivioIncantesimi.FinestraAggiungiIncantesimo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Aggiungi Incantesimo" Height="400" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <StackPanel>
+                <Label Content="Nome Incantesimo"/>
+                <TextBox x:Name="txtNome" Margin="0,5"/>
+                <Label Content="Creatore/Scopritore"/>
+                <TextBox x:Name="txtCreatore" Margin="0,5"/>
+                <Label Content="Data di Scoperta/Creazione"/>
+                <DatePicker x:Name="dpData" Margin="0,5"/>
+                <Label Content="Scuole di Magia (separate da virgola)"/>
+                <TextBox x:Name="txtScuole" Margin="0,5"/>
+                <CheckBox x:Name="chkDisponibile" Content="Disponibile per la consultazione" Margin="0,5"/>
+                <Label Content="Livello di Pericolo (1-10)"/>
+                <TextBox x:Name="txtLivello" Margin="0,5"/>
+                <Button Content="Aggiungi" Click="BtnAggiungi_Click" Margin="0,10"/>
+                <Label x:Name="lblEsito" Foreground="Red"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

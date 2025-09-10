@@ -1,0 +1,15 @@
+﻿<Window x:Class="ArchivioIncantesimi.FinestraCercaAggiungiScuola"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cerca e Aggiungi Scuola" Height="250" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <Label Content="Inserisci CRA"/>
+            <TextBox x:Name="txtCRA" Margin="0,5" />
+            <Label Content="Nuova Scuola di Magia"/>
+            <TextBox x:Name="txtScuola" Margin="0,5" />
+            <Button Content="Aggiungi Scuola" Click="BtnAggiungiScuola_Click" Margin="0,10"/>
+            <Label x:Name="lblEsito" Foreground="Red"/>
+        </StackPanel>
+    </Grid>
+</Window>

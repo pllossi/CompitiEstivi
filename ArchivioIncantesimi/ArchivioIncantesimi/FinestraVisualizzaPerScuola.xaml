@@ -1,0 +1,13 @@
+﻿<Window x:Class="ArchivioIncantesimi.FinestraVisualizzaPerScuola"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Visualizza per Scuola" Height="350" Width="400">
+    <Grid Margin="10">
+        <StackPanel>
+            <Label Content="Inserisci Scuola di Magia"/>
+            <TextBox x:Name="txtScuola" Margin="0,5" />
+            <Button Content="Visualizza" Click="BtnVisualizza_Click" Margin="0,10"/>
+            <ListBox x:Name="lstIncantesimi" Margin="0,5"/>
+        </StackPanel>
+    </Grid>
+</Window>

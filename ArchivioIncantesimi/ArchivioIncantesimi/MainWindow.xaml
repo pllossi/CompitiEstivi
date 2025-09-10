@@ -1,12 +1,14 @@
 ﻿<Window x:Class="ArchivioIncantesimi.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ArchivioIncantesimi"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Archivio Incantesimi" Height="450" Width="800">
     <Grid>
-
+        <Label Content="Archivio degli Incantesimi" HorizontalAlignment="Center" Height="45" Margin="0,46,0,0" VerticalAlignment="Top" Width="273" FontSize="23"/>
+        <Button x:Name="AggiungiIncantesimo" Content="Aggiungi Incantesimo" HorizontalAlignment="Left" Height="80" Margin="60,168,0,0" VerticalAlignment="Top" Width="160" Click="AggiungiIncantesimo_Click"/>
+        <Button x:Name="VisualizzaIncantesimo" Content="Visualizza Incantesimo" HorizontalAlignment="Left" Height="80" Margin="596,168,0,0" VerticalAlignment="Top" Width="160" Click="VisualizzaIncantesimo_Click"/>
+        <Button x:Name="CercaAggiungiScuola" Content="Cerca e Aggiungi Scuola" HorizontalAlignment="Left" Height="80" Margin="60,318,0,0" VerticalAlignment="Top" Width="160" Click="CercaAggiungiScuola_Click"/>
+        <Button x:Name="VisualizzaPerScuola" Content="Visualizza per Scuola" HorizontalAlignment="Left" Height="80" Margin="596,318,0,0" VerticalAlignment="Top" Width="160" Click="VisualizzaPerScuola_Click"/>
+        <Label x:Name="lblTotale" Content="Totale: 0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" FontSize="16"/>
+        <Button x:Name="VisualizzaIncantesimi" Content="Visualizza Incantesimi" HorizontalAlignment="Center" Height="80" Margin="0,239,0,0" VerticalAlignment="Top" Width="160" Click="VisualizzaIncantesimi_Click"/>
     </Grid>
 </Window>
