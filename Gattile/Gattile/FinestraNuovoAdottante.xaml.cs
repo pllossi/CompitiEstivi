@@ -15,14 +15,26 @@ namespace Gattile
 
         private void btnSalva_Click(object sender, RoutedEventArgs e)
         {
-            var adottante = new Adottante
+        
+            try
             {
-                Nome = txtNome.Text,
-                Cognome = txtCognome.Text,
-                Telefono = txtTelefono.Text,
-                Email = txtEmail.Text
-            };
-            gestore.InserisciAdottante(adottante);
+                if (txtNome.Text == "" || txtCognome.Text == "" || (txtTelefono.Text == "" && txtEmail.Text == ""))
+                {
+                    throw new ArgumentException();
+                }
+                var adottante = new Adottante
+                {
+                    Nome = txtNome.Text,
+                    Cognome = txtCognome.Text,
+                    Telefono = txtTelefono.Text,
+                    Email = txtEmail.Text
+                };
+                gestore.InserisciAdottante(adottante);
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Controlla i campi inseriti.");
+            }
             Close();
         }
     }

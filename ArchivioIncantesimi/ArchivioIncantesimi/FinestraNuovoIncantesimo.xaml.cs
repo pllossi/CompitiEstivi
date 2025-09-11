@@ -19,27 +19,36 @@ namespace ArchivioIncantesimi
 
         private void BtnAggiungi_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtCreatore.Text) ||
+            Incantesimo incantesimo;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtCreatore.Text) ||
                 dpData.SelectedDate == null || string.IsNullOrWhiteSpace(txtScuole.Text) ||
                 !int.TryParse(txtLivello.Text, out int livello) || livello < 1 || livello > 10)
-            {
-                lblEsito.Content = "Compila tutti i campi correttamente.";
-                return;
+                {
+                    lblEsito.Content = "Compila tutti i campi correttamente.";
+                    return;
+                }
+
+                var scuole = txtScuole.Text.Split(',').Select(s => s.Trim()).Where(s => !string.IsNullOrEmpty(s)).Distinct().OrderBy(s => s).ToList();
+
+                incantesimo = new Incantesimo
+                {
+                    CRA = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper(),
+                    Nome = txtNome.Text,
+                    Creatore = txtCreatore.Text,
+                    DataScoperta = dpData.SelectedDate.Value,
+                    ScuoleMagia = scuole,
+                    Disponibile = chkDisponibile.IsChecked ?? false,
+                    LivelloPericolo = livello
+                };
+
+                
             }
-
-            var scuole = txtScuole.Text.Split(',').Select(s => s.Trim()).Where(s => !string.IsNullOrEmpty(s)).Distinct().OrderBy(s => s).ToList();
-
-            var incantesimo = new Incantesimo
+            catch(Exception ex)
             {
-                CRA = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper(),
-                Nome = txtNome.Text,
-                Creatore = txtCreatore.Text,
-                DataScoperta = dpData.SelectedDate.Value,
-                ScuoleMagia = scuole,
-                Disponibile = chkDisponibile.IsChecked ?? false,
-                LivelloPericolo = livello
-            };
-
+                MessageBox.Show($"Ricontrollare i dati inseriti", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             if (archivio.AggiungiIncantesimo(incantesimo))
             {
                 MessageBox.Show($"Incantesimo '{incantesimo.Nome}' aggiunto con successo! \n Cra '{incantesimo.CRA}'", "Successo", MessageBoxButton.OK, MessageBoxImage.Information);

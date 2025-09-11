@@ -82,7 +82,7 @@ namespace GattileLib
             get => _dataUscita;
             set
             {
-                if (value.HasValue && value < DataArrivoGattile)
+                if (value.HasValue && value > DataArrivoGattile)
                 {
                     throw new ArgumentException("La data di uscita non può essere precedente alla data di arrivo.");
                 }
